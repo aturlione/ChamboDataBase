@@ -4,7 +4,7 @@ from flask_cors import CORS
 from config import config
 
 # Routes
-from routes import Movie
+from routes import Hydrography
 
 app = Flask(__name__)
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     app.config.from_object(config['development'])
 
     # Blueprints
-    app.register_blueprint(Movie.main, url_prefix='/api/movies')
+    app.register_blueprint(Hydrography.main, url_prefix='/api')
 
     # Error handlers
     app.register_error_handler(404, page_not_found)
